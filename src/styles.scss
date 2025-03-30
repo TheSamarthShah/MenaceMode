@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    /* Base Colors */
+    --color1: #3a0e47; //exclusivity
+    --color2: #d4af37; //reward
+    --color3: #f8f5f2; //purity
+    --color4: #1a1a1d; //power
+    --color5: #287f5e; //trust
+  
+    /* Lighter Tints */
+    --color1-light: #5b216a;
+    --color2-light: #e1c16e;
+    --color3-light: #ffffff;
+    --color4-light: #3a3a3e;
+    --color5-light: #3ca378;
+  
+    /* Darker Shades */
+    --color1-dark: #290a33;
+    --color2-dark: #af8f2b;
+    --color3-dark: #dcd9d5;
+    --color4-dark: #0d0d0e;
+    --color5-dark: #1b5e45;
+  }
+  
