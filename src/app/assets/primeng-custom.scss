@@ -1,7 +1,25 @@
 @layer app-styles, primeng;
 
 @layer app-styles {
-    .p-button{
-        color: black ;
+  .navbar {
+    user-select: none;
+    .p-menubar {
+      background-color: var(--color3);
+      color: var(--color2);
+      display: flex;
+      justify-content: space-between;
+      .p-menubar-item-icon,
+      .p-menubar-item-content {
+        color: var(--color5);
+      }
+      .p-menubar-button{
+        color: var(--color2);
+        margin-left: auto;
+      }
+      .p-menubar-end {
+        display: none;
+      }
     }
+
+  }
 }
