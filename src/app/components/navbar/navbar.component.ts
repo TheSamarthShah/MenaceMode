@@ -13,7 +13,6 @@ import { CommonModule } from '@angular/common';
 })
 export class NavbarComponent implements OnInit {
   mainItems: MenuItem[] = [];
-  rightItems: MenuItem[] = [];
 
   ngOnInit(): void {
     this.initializeMenuItems();
