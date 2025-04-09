@@ -1,72 +1,140 @@
-import { Component, OnInit } from '@angular/core';
-import { MenuItem } from 'primeng/api';
-import { MenubarModule } from 'primeng/menubar';
-import { RouterLink } from '@angular/router';
+import { Component, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MegaMenuModule } from 'primeng/megamenu';
+import { MegaMenuItem } from 'primeng/api';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [MenubarModule, RouterLink, CommonModule],
+  imports: [MegaMenuModule, CommonModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent implements OnInit {
-  mainItems: MenuItem[] = [];
+  mainItems = signal<MegaMenuItem[]>([]);
 
   ngOnInit(): void {
     this.initializeMenuItems();
   }
 
   private initializeMenuItems(): void {
-    this.mainItems = [
-      { label: 'Home', icon: 'pi pi-home', routerLink: ['/'] },
+    this.mainItems.set([
       {
-        label: 'Shop',
-        icon: 'pi pi-shopping-bag',
+        label: 'Apparel',
         items: [
-          { label: 'Men', icon: 'pi pi-male', routerLink: ['/shop/men'] },
-          { label: 'Women', icon: 'pi pi-female', routerLink: ['/shop/women'] },
-          { label: 'Kids', icon: 'pi pi-users', routerLink: ['/shop/kids'] },
-          { separator: true },
-          { label: 'New Arrivals', icon: 'pi pi-star', routerLink: ['/shop/new'] },
-          { label: 'Best Sellers', icon: 'pi pi-thumbs-up', routerLink: ['/shop/best-sellers'] },
-          { label: 'Sale', icon: 'pi pi-tags', routerLink: ['/shop/sale'] }
+          [
+            {
+              label: 'Men',
+              items: [
+                { label: 'Graphic Tees' },
+                { label: 'Oversized Tees' },
+                { label: 'Hoodies' },
+                { label: 'Joggers' },
+                { label: 'Denim' }
+              ]
+            }
+          ],
+          [
+            {
+              label: 'Women',
+              items: [
+                { label: 'Cropped Tees' },
+                { label: 'Oversized Tees' },
+                { label: 'Hoodies' },
+                { label: 'Leggings' },
+                { label: 'Denim' }
+              ]
+            }
+          ]
         ]
       },
       {
-        label: 'Categories',
-        icon: 'pi pi-th-large',
+        label: 'Statement Pieces',
         items: [
-          { label: 'Graphic Tees', icon: 'pi pi-image', routerLink: ['/category/graphic-tees'] },
-          { label: 'Plain T-Shirts', icon: 'pi pi-circle', routerLink: ['/category/plain-tees'] },
-          { label: 'Oversized', icon: 'pi pi-th-large', routerLink: ['/category/oversized'] },
-          { label: 'V-Neck', icon: 'pi pi-check-circle', routerLink: ['/category/v-neck'] },
-          { label: 'Polo T-Shirts', icon: 'pi pi-star', routerLink: ['/category/polo'] }
+          [
+            {
+              label: 'Outerwear',
+              items: [
+                { label: 'Bomber Jackets' },
+                { label: 'Denim Jackets' },
+                { label: 'Windbreakers' }
+              ]
+            }
+          ],
+          [
+            {
+              label: 'Limited Editions',
+              items: [
+                { label: 'Artist Collabs' },
+                { label: 'Drops' },
+                { label: 'Numbered Tees' }
+              ]
+            }
+          ],
+          [
+            {
+              label: 'Wearables',
+              items: [
+                { label: 'Caps & Beanies' },
+                { label: 'Chains & Rings' },
+                { label: 'Watches' }
+              ]
+            }
+          ],
+          [
+            {
+              label: 'Carriers',
+              items: [
+                { label: 'Crossbody Bags' },
+                { label: 'Backpacks' },
+                { label: 'Tote Bags' }
+              ]
+            }
+          ]
         ]
       },
-      { label: 'Customize', icon: 'pi pi-palette', routerLink: ['/customize'] },
       {
-        label: 'Account',
-        icon: 'pi pi-user',
+        label: 'Gadget Accessories',
         items: [
-          { label: 'Login', icon: 'pi pi-sign-in', routerLink: ['/login'] },
-          { label: 'Register', icon: 'pi pi-user-plus', routerLink: ['/register'] },
-          { label: 'Orders', icon: 'pi pi-box', routerLink: ['/orders'] },
-          { label: 'Wishlist', icon: 'pi pi-heart', routerLink: ['/wishlist'] }
+          [
+            {
+              label: 'Tech Essentials',
+              items: [
+                { label: 'Phone Cases' },
+                { label: 'Laptop Sleeves' },
+                { label: 'Smart Bracelets' }
+              ]
+            }
+          ]
         ]
       },
-      { 
-        label: 'Contact Us', 
-        icon: 'pi pi-envelope', 
-        routerLink: ['/contact']
-      },
-      { 
-        label: 'Cart', 
-        icon: 'pi pi-shopping-cart', 
-        routerLink: ['/cart'],
-        styleClass: 'cart-menu'
+      {
+        label: 'Others',
+        items: [
+          [
+            {
+              label: 'Lifestyle',
+              items: [
+                { label: 'Reusable Bottles' },
+                { label: 'Notebooks' },
+                { label: 'Wall Posters' }
+              ]
+            }
+          ],
+          [
+            {
+              label: 'Extras',
+              items: [
+                { label: 'Stickers' },
+                { label: 'Patches' },
+                { label: 'Gift Cards' }
+              ]
+            }
+          ]
+        ]
       }
-    ];
+    ]);
+    
+    
   }
 }

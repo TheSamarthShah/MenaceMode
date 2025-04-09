@@ -1,5 +1,21 @@
 <div>
-  <div class="navstrip"></div> <!-- Top strip -->
-  <div class="navbar"></div> <!-- Navbar -->
-  <div class="bottom-strip"></div> <!-- Bottom strip -->
+  <div class="navstrip"></div>
+  <div class="navbar">
+    <div class="logo">
+      <a href="/" class="brand-logo">
+        MENACE<span>MODE</span>
+        <div class="brand-slogan">Activate the Chaos</div>
+      </a>
+    </div>
+    <div class="menace-navitems">
+      <p-megaMenu 
+        [model]="mainItems()" 
+        orientation="horizontal" 
+        class="menace-mega-menu"
+        [style]="{ 'background-color': 'transparent', border: 'none' }"
+        >
+      </p-megaMenu>
+    </div>
+  </div>
+  <div class="bottom-strip"></div>
 </div>
