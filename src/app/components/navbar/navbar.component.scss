@@ -9,6 +9,16 @@
       display: flex;
       gap: 1rem;
     }
+    .p-megamenu-submenu-label{
+      display: flex !important;
+      justify-content: center !important;
+    }
+    .p-megamenu-grid{
+      .p-megamenu-item{
+        display: flex;
+        justify-content: center;
+      }
+    }
   } 
   height: 4rem;
   border-bottom: 1px solid rgb(232, 232, 232);
@@ -47,11 +57,12 @@
   }
   .menace-navitems{
     font-family: "Montserrat", sans-serif;
-    font-weight: bold;
     font-size: 0.9rem;
-    color: var(--color1) !important;
+    color: var(--color4-dark) !important;
     padding: 0;
     margin: 0;
+
+
   }
 }
 .navstrip {

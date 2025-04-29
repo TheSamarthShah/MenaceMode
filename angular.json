@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "TEEMENACE": {
+    "MenaceMode": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -39,7 +39,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/teemenace",
+            "outputPath": "dist/MenaceMode",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": ["zone.js"],
@@ -91,10 +91,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "TEEMENACE:build:production"
+              "buildTarget": "MenaceMode:build:production"
             },
             "development": {
-              "buildTarget": "TEEMENACE:build:development"
+              "buildTarget": "MenaceMode:build:development"
             }
           },
           "defaultConfiguration": "development"
