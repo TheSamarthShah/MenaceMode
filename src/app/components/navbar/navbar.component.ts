@@ -1,24 +1,21 @@
 import { Component, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MegaMenuModule } from 'primeng/megamenu';
-import { MegaMenuItem } from 'primeng/api';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [MegaMenuModule, CommonModule],
+  imports: [CommonModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent implements OnInit {
-  mainItems = signal<MegaMenuItem[]>([]);
 
   ngOnInit(): void {
     this.initializeMenuItems();
   }
 
   private initializeMenuItems(): void {
-    this.mainItems.set([
+    /*this.mainItems.set([
       {
         label: 'Apparel',
         items: [
@@ -133,7 +130,7 @@ export class NavbarComponent implements OnInit {
           ]
         ]
       }
-    ]);
+    ]);*/
     
     
   }
